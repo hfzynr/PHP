@@ -11,6 +11,16 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Data Master
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./src/Contents/MasterGuru.php">Data Guru</a>
+            <!-- <a class="dropdown-item" href="./">Rekap 2</a>
+            <a class="dropdown-item" href="./">Rekap 3</a> -->
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Report
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
