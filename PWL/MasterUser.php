@@ -40,45 +40,22 @@
 <body>
     <div class="mr-sm-2 ml-sm-2 row justify-content-between form-row">
         <div class="col-1 mt-3 mb-2">
-            <button type="button" class=" btn btn-primary form-control" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class=" btn btn-outline-dark form-control" data-toggle="modal" data-target="#exampleModal">
             Add Data
             </button>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Form Add Master</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Form Add Master User</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
-                        <div class="form-group">
-                            <label for="inpUserID" class="col-form-label">User ID:</label>
-                            <input type="text" class="form-control" id="inpUserID">
-                        </div>
-                        <div class="form-group">
-                            <label for="inpNik" class="col-form-label">NIK:</label>
-                            <input class="form-control" id="inpNik"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="inpNama" class="col-form-label">Nama:</label>
-                            <input class="form-control" id="inpNama"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="inpJabatan" class="col-form-label">Jabatan:</label>
-                            <input class="form-control" id="inpJabatan"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="inpPangkat" class="col-form-label">Pangkat:</label>
-                            <input class="form-control" id="inpPangkat"></input>
-                        </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Add Data</button>
+                        <?php
+                        include '.\AddMasterUser.php'
+                        ?>
                     </div>
                     </div>
                 </div>

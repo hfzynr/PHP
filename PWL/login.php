@@ -36,7 +36,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <?php
-        include '.\src\Contents\headscript.php';
+        include '.\headscript.php';
     ?>
     <title>Login Page</title>
 </head>
@@ -53,7 +53,7 @@
                 <label class="sr-only" for="">Password</label>
                 <input name="inpPassword" class="form-control" type="password" placeholder="Password" required>
                 </p>
-                <button class="btn btn-primary btn-block" type="sumbit">Sign In</button>
+                <button class="btn btn-primary btn-block" type="submit">Sign In</button>
             </form>
         </div>
     </div>
