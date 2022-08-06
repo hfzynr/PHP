@@ -4,7 +4,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="./">Kelompok 2</a>
+        <a class="navbar-brand" href="./../../index.php">Kelompok 2</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
             <a class="nav-link" href="#">Input Nilai<span class="sr-only">(current)</span></a>
@@ -14,7 +14,7 @@
             Data Master
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="./src/Contents/MasterGuru.php">Data Guru</a>
+            <a class="dropdown-item" href="./MasterUser.php">Data User</a>
             <!-- <a class="dropdown-item" href="./">Rekap 2</a>
             <a class="dropdown-item" href="./">Rekap 3</a> -->
             </div>

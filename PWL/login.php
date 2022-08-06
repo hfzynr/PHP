@@ -36,7 +36,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <?php
-        include '.\headscript.php';
+        include '.\src\Contents\headscript.php';
     ?>
     <title>Login Page</title>
 </head>
