@@ -34,7 +34,7 @@
             Setting
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/src/Pages/AboutUs.php">About Us</a>
+            <a class="dropdown-item" href="./AboutUs.php">About Us</a>
             <a class="dropdown-item" href="./logout.php">Logout</a>
             </div>
         </li>

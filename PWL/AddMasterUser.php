@@ -21,6 +21,10 @@
             echo '<script type="text/javascript">';
             echo 'alert("Data Inserted!!")';
             echo '</script>';
+        } else {
+            echo '<script type="text/javascript">';
+            echo 'alert("There is Something Wrong!!")';
+            echo '</script>';
         }
     }
 ?>
