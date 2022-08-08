@@ -19,6 +19,7 @@
         echo "<td>$isi[nama]     </td>";
         echo "<td>$isi[jabatan]  </td>";
         echo "<td>$isi[pangkat]  </td>";
+        echo "<td><button class='btn btn-danger editBtn' type='button'>Edit</button> | <button class='btn btn-danger'>Remove</button></td>";
         echo "</tr>";
     }
     $total_baris = mysqli_num_rows($result);

@@ -39,13 +39,21 @@
         include '.\headscript.php';
     ?>
     <style>
-    body {
-        background-image : url('./assets/image/login.jpeg');
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg {
+    background-image : url('./assets/image/login.jpeg');
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     }
 
     .centeringform {
-    margin: 30px;
-    top: 30%;
+    top: 35%;
     position: absolute;
     }
 
@@ -56,20 +64,22 @@
     <title>Login Page</title>
 </head>
 <body>
-    <div class="container-fluid text-center centeringform">
-        <div class="row justify-content-center">
-            <form class="col-3 pb-3 border border-secondary rounded form-bg" method="POST">
-                <h1>SIGN IN</h1>
-                <p>
-                <label class="sr-only" for="">NIK</label>
-                <input name="inpNik" class="form-control" type="text" placeholder="NIK" required autofocus>
-                </p>
-                <p>
-                <label class="sr-only" for="">Password</label>
-                <input name="inpPassword" class="form-control" type="password" placeholder="Password" required>
-                </p>
-                <button class="btn btn-primary btn-block" type="submit">Sign In</button>
-            </form>
+    <div class="bg">
+        <div class="container-fluid text-center centeringform">
+            <div class="row justify-content-center">
+                <form class="col-3 pb-3 border border-secondary rounded form-bg" method="POST">
+                    <h1>SIGN IN</h1>
+                    <p>
+                    <label class="sr-only" for="">NIK</label>
+                    <input name="inpNik" class="form-control" type="text" placeholder="NIK" required autofocus>
+                    </p>
+                    <p>
+                    <label class="sr-only" for="">Password</label>
+                    <input name="inpPassword" class="form-control" type="password" placeholder="Password" required>
+                    </p>
+                    <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
