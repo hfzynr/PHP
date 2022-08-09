@@ -20,10 +20,8 @@
         ";
 
         $result = mysqli_query($conn,$query);
+
         if($result){
-            echo '<script type="text/javascript">';
-            echo 'alert("Data Updated!!")';
-            echo '</script>';
             header("Location: ./../MasterUser.php");
         } else {
             echo '<script type="text/javascript">';

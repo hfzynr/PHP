@@ -4,8 +4,9 @@
 
     include './function.php';
 
-    $list_jabatan = get_data_jabatan();
-    $list_pangkat = get_data_pangkat();
+    checkLogin();
+    $list_jabatan = getDataJabatan();
+    $list_pangkat = getDataPangkat();
 
     if(isset($_POST['inpUserID'])){
         //define Variabel Inputan

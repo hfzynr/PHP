@@ -1,10 +1,8 @@
 <?php
+
+    include './function.php';
     session_start();
-    if(isset($_SESSION['inpNik']) && !empty($_SESSION['inpNik'])) {
-        //Masuk Session
-    } else {
-        header("Location: ./login.php");
-    }
+    checkLogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
