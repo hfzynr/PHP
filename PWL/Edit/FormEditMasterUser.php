@@ -1,34 +1,4 @@
-<?php
-    if(isset($_POST['inpUserID'])){
-    //     //define Variabel Inputan
-        $userid  = $_POST['inpUserEdit'];
-        $nip     = $_POST['inpNikEdit'];
-        $nama    = $_POST['inpNamaEdit'];
-        $jabatan = $_POST['inpJabatanEdit'];
-        $pangkat = $_POST['inpPangkatEdit'];
-
-        $query = "UPDATE 
-                    user 
-                SET 
-                    nama='$nama', 
-                    jabatan='$jabatan', 
-                    pangkat='$pangkat'
-                WHERE
-                    nip='$nip'
-        ";
-        $result = mysqli_query($conn,$query);
-        if($result){
-            echo '<script type="text/javascript">';
-            echo 'alert("Data Updated!!")';
-            echo '</script>';
-        } else {
-            echo '<script type="text/javascript">';
-            echo 'alert("There is Something Wrong!!")';
-            echo '</script>';
-        }
-    }
-?>
-<form method="POST">
+<form method="POST" action="./Edit/EditUser.php">
     <div class="form-group">
         <label for="inpUserID" class="col-form-label">User ID:</label>
         <input readonly type="text" class="form-control" id="inpUserEdit" name="inpUserEdit" value="">

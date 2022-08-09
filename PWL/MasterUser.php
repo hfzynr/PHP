@@ -94,7 +94,7 @@
                     </div>
                     <div class="modal-body">
                         <?php
-                        include '.\EditMasterUser.php'
+                        include '.\Edit\FormEditMasterUser.php'
                         ?>
                     </div>
                     </div>
