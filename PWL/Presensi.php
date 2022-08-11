@@ -46,7 +46,7 @@
 <body>
     <div class="container text-center">
         <div class="card mt-3">
-            <h1 id="timestamp"></h1>
+            <h1 id="timestamp">00:00:00</h1>
             <div id="presensi">
                 <a href="#" class="btn btn-primary">Presensi</a>
             </div>
