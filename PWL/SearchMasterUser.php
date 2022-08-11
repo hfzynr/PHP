@@ -21,7 +21,9 @@
         echo "<td>$isi[nama]          </td>";
         echo "<td>$isi[nama_jabatan]  </td>";
         echo "<td>$isi[nama_pangkat]  </td>";
-        echo "<td><button class='btn btn-danger editBtn' type='button'>Edit</button> | <button class='btn btn-danger'>Remove</button></td>";
+        echo "<td>
+                <button class='btn btn-success editBtn'>Edit</button> 
+                <a class='btn btn-danger' href='./ActionDeleteUser.php?nip=$isi[nip]'>Remove</a></td>";
         echo "</tr>";
     }
     $total_baris = mysqli_num_rows($result);

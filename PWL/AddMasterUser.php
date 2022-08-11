@@ -11,21 +11,15 @@
     if(isset($_POST['inpUserID'])){
         //define Variabel Inputan
         $userid = $_POST['inpUserID'];
-        $nik = $_POST['inpNik'];
+        $nip = $_POST['inpNip'];
         $nama = $_POST['inpNama'];
         $jabatan = $_POST['inpJabatan'];
         $pangkat = $_POST['inpPangkat'];
 
-        $query = "INSERT INTO user VALUES ('$userid',MD5('1'),'$nik','$nama','$jabatan','$pangkat')";
+        $query = "INSERT INTO user VALUES ('$userid',MD5('1'),'$nip','$nama','$jabatan','$pangkat')";
         $result = mysqli_query($conn,$query);
         if($result){
-            echo '<script type="text/javascript">';
-            echo 'alert("Data Inserted!!")';
-            echo '</script>';
-        } else {
-            echo '<script type="text/javascript">';
-            echo 'alert("There is Something Wrong!!")';
-            echo '</script>';
+            header('./MasterUser.php');
         }
     }
 ?>
@@ -35,8 +29,8 @@
         <input type="text" class="form-control" id="inpUserID" name="inpUserID">
     </div>
     <div class="form-group">
-        <label for="inpNik" class="col-form-label">NIK:</label>
-        <input class="form-control" id="inpNik" name="inpNik"></input>
+        <label for="inpNip" class="col-form-label">NIP:</label>
+        <input class="form-control" id="inpNip" name="inpNip"></input>
     </div>
     <div class="form-group">
         <label for="inpNama" class="col-form-label">Nama:</label>
