@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['inpNik']) && !empty($_SESSION['inpNik'])) {
+    if(isset($_SESSION['inpUser']) && !empty($_SESSION['inpUser'])) {
         //Masuk Session
     } else {
         header("Location: ./login.php");
@@ -14,10 +14,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include './headscript.php' ?>
     <title>Input Nilai</title>
+    <script>
+    const searchInquiryJQ = (value) => {
+            $.get("SearchUserNilai.php", {nama: value})
+             .done(function(data){
+                $('#tableUser').html(data)
+            });
+        }
+    </script>
 </head>
 <?php include './src/Contents/Header.php' ?>
-<body>
-    
+<body onload="searchInquiryJQ('')">
+    <div class="mr-sm-2 ml-sm-2 row justify-content-between form-row">
+        <div class="col-3 mt-3 mb-2">
+            <input id="inpSearch" class="form-control mr-sm-2" type="text" placeholder="Search" onkeyup="searchInquiryJQ(this.value)">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">NIP</th>
+            <th scope="col">Nama User</th>
+            <th scope="col">Jabatan</th>
+            <th scope="col">Pangkat</th>
+            <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="tableUser">
+        </tbody>
+        </table>
+    </div>
 </body>
 <?php include './src/Contents/Footer.php' ?>
 </html>

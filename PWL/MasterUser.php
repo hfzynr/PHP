@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['inpNik']) && !empty($_SESSION['inpNik'])) {
+    if(isset($_SESSION['inpUser']) && !empty($_SESSION['inpUser'])) {
         //Masuk Session
     } else {
         header("Location: ./login.php");
@@ -31,7 +31,7 @@
             // console.log(data[0])
 
             inpUserEdit   .value = data[0].trim();
-            inpNikEdit    .value = data[1].trim();
+            inpNipEdit    .value = data[1].trim();
             inpNamaEdit   .value = data[2].trim();
         })
 
@@ -56,7 +56,7 @@
     </script>
 </head>
 <?php include './src/Contents/Header.php' ?>
-<body>
+<body onload="searchInquiryJQ('')">
     <div class="mr-sm-2 ml-sm-2 row justify-content-between form-row">
         <div class="col-1 mt-3 mb-2">
             <button type="button" class="btn btn-outline-dark form-control" data-toggle="modal" data-target="#addModal">
@@ -111,7 +111,7 @@
         <thead class="thead-dark">
             <tr>
             <th scope="col">User ID</th>
-            <th scope="col">NIK</th>
+            <th scope="col">NIP</th>
             <th scope="col">Nama User</th>
             <th scope="col">Jabatan</th>
             <th scope="col">Pangkat</th>

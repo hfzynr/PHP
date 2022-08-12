@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['inpNik']) && !empty($_SESSION['inpNik'])) {
+    if(isset($_SESSION['inpUser']) && !empty($_SESSION['inpUser'])) {
         //Masuk Session
     } else {
         header("Location: ./login.php");
@@ -19,7 +19,7 @@
             setInterval(timestamp, 1000);
         });
 
-        function timestamp() {
+        const timestamp = () => {
             $.ajax({
                 url: './jam.php',
                 success: function(data) {
@@ -27,6 +27,7 @@
                 },
             });
         }
+
     </script>
     <style>
         .card {
@@ -46,9 +47,11 @@
 <body>
     <div class="container text-center">
         <div class="card mt-3">
-            <h1 id="timestamp">00:00:00</h1>
+            <h1 id="timestamp" name="timestamp">00:00:00</h1>
             <div id="presensi">
-                <a href="#" class="btn btn-primary">Presensi</a>
+                <?php
+                echo "<a href='./InsertPresensi.php?inpNip=".$_SESSION['inpNip']."' class='btn btn-primary'>Presensi</a>"
+                ?>
             </div>
         </div>
     </div>

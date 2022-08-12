@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_POST['inpNik']) && isset($_POST['inpPassword'])){
+    if(isset($_POST['inpUser']) && isset($_POST['inpPassword'])){
         
         require './src/Koneksi/Koneksi.php';
 
@@ -9,7 +9,7 @@
         $conn = open_connection();
 
         //baca inputan
-        $username = $_POST['inpNik'];
+        $username = $_POST['inpUser'];
         $password = $_POST['inpPassword'];
 
         //bikin query SQL
@@ -17,11 +17,13 @@
 
         //eksekusi query
         $result = mysqli_query($conn, $query);
+        // $isi = mysqli_fetch_array($result);
 
         //cek hasil, jika ada data, maka simpan session dan redirect ke index
         if($isi = mysqli_fetch_assoc($result)){
             //simpan session
-            $_SESSION["inpNik"] = $username;
+            $_SESSION["inpUser"] = $username;
+            $_SESSION["inpNip"]  = $isi[nip];
             //redirect
             header("Location: ./");
         } else {
@@ -71,7 +73,7 @@
                     <h1>SIGN IN</h1>
                     <p>
                     <label class="sr-only" for="">NIK</label>
-                    <input name="inpNik" class="form-control" type="text" placeholder="NIK" required autofocus>
+                    <input name="inpUser" class="form-control" type="text" placeholder="NIK" required autofocus>
                     </p>
                     <p>
                     <label class="sr-only" for="">Password</label>

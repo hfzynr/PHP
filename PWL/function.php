@@ -25,7 +25,7 @@ function getDataPangkat(){
 }
 
 function checkLogin(){
-    if(isset($_SESSION['inpNik']) && !empty($_SESSION['inpNik'])) {
+    if(isset($_SESSION['inpUser']) && !empty($_SESSION['inpUser'])) {
         //Masuk Session
     } else {
         header("Location: ./login.php");

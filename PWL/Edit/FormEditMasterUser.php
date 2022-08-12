@@ -4,8 +4,8 @@
         <input readonly type="text" class="form-control" id="inpUserEdit" name="inpUserEdit" value="">
     </div>
     <div class="form-group">
-        <label for="inpNik" class="col-form-label">NIK:</label>
-        <input readonly class="form-control" id="inpNikEdit" name="inpNikEdit"></input>
+        <label for="inpNip" class="col-form-label">NIK:</label>
+        <input readonly class="form-control" id="inpNipEdit" name="inpNipEdit"></input>
     </div>
     <div class="form-group">
         <label for="inpNama" class="col-form-label">Nama:</label>

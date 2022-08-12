@@ -2,10 +2,10 @@
     require './../src/Koneksi/Koneksi.php';
     $conn = open_connection();
 
-    if(isset($_POST['inpNikEdit'])){
+    if(isset($_POST['inpNipEdit'])){
     //     //define Variabel Inputan
         $userid  = $_POST['inpUserEdit'];
-        $nip     = $_POST['inpNikEdit'];
+        $nip     = $_POST['inpNipEdit'];
         $nama    = $_POST['inpNamaEdit'];
         $jabatan = $_POST['inpJabatanEdit'];
         $pangkat = $_POST['inpPangkatEdit'];
