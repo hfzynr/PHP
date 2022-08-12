@@ -10,7 +10,8 @@
                 LEFT JOIN master_jabatan b ON a.jabatan = b.kode_jabatan
                 LEFT JOIN master_pangkat c ON a.pangkat = c.kode_pangkat
                 WHERE 
-                    a.nama LIKE '%$keyword%' ";
+                    a.nama LIKE '%$keyword%' 
+                and b.kode_jabatan in ('001','002')";
     $result = mysqli_query($conn, $query);
 
     while($isi = mysqli_fetch_array($result))

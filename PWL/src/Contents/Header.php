@@ -28,9 +28,8 @@
             Report
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="./">Presensi</a>
-            <a class="dropdown-item" href="./">Nilai</a>
-            <a class="dropdown-item" href="./">Rekap 3</a>
+            <a class="dropdown-item" href="./ReportPresensi.php">Presensi</a>
+            <a class="dropdown-item" href="./ReportNilai.php">Nilai</a>
             </div>
         </li>
         </ul>
