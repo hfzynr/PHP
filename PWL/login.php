@@ -23,7 +23,7 @@
         if($isi = mysqli_fetch_assoc($result)){
             //simpan session
             $_SESSION["inpUser"] = $username;
-            $_SESSION["inpNip"]  = $isi[nip];
+            $_SESSION["inpNip"]  = $isi['nip'];
             //redirect
             header("Location: ./");
         } else {

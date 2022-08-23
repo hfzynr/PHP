@@ -2,30 +2,33 @@
     require './../src/Koneksi/Koneksi.php';
     $conn = open_connection();
 
-    $keyword = $_GET['nip'];
+    $nip = $_GET['nip'];
+    $tanggal1 = isset($_GET['tanggal1']) ? $_GET['tanggal1'] : 00000000;
+    $tanggal2 = isset($_GET['tanggal2']) ? $_GET['tanggal2'] : 99991231;
+
     $query = "  SELECT 
                     STR_TO_DATE(tanggal,'%Y%m%d') as tanggal,
                     nip,
                     nama,
                     nama_jabatan,
                     case when kompetensi1 = 0 then 'Tidak terpenuhi'
-                        when kompetensi1 > 0 then 'Sebagian terpenuhi'
+                        when kompetensi1 > 0 and kompetensi1 < 2 then 'Sebagian terpenuhi'
                         when kompetensi1 = 2 then 'Sudah terpenuhi'
                     end as kompetensi1,
                     case when kompetensi2 = 0 then 'Tidak terpenuhi'
-                        when kompetensi2 > 0 then 'Sebagian terpenuhi'
+                        when kompetensi2 > 0 and kompetensi2 < 2 then  'Sebagian terpenuhi'
                         when kompetensi2 = 2 then 'Sudah terpenuhi'
                     end as kompetensi2,
                     case when kompetensi3 = 0 then 'Tidak terpenuhi'
-                        when kompetensi3 > 0 then 'Sebagian terpenuhi'
+                        when kompetensi3 > 0 and kompetensi3 < 2 then 'Sebagian terpenuhi'
                         when kompetensi3 = 2 then 'Sudah terpenuhi'
                     end as kompetensi3,
                     case when kompetensi4 = 0 then 'Tidak terpenuhi'
-                        when kompetensi4 > 0 then 'Sebagian terpenuhi'
+                        when kompetensi4 > 0 and kompetensi4 < 2 then 'Sebagian terpenuhi'
                         when kompetensi4 = 2 then 'Sudah terpenuhi'
                     end as kompetensi4,
                     case when kompetensi5 = 0 then 'Tidak terpenuhi'
-                        when kompetensi5 > 0 then 'Sebagian terpenuhi'
+                        when kompetensi5 > 0 and kompetensi5 < 2 then 'Sebagian terpenuhi'
                         when kompetensi5 = 2 then 'Sudah terpenuhi'
                     end as kompetensi5
                 FROM
@@ -45,9 +48,11 @@
                     LEFT JOIN master_jabatan b ON a.jabatan = b.kode_jabatan
                     LEFT JOIN nilai c ON a.nip = c.nip
                     WHERE 
-                        a.nip LIKE '%$keyword%' 
+                        a.nip LIKE '%$nip%' 
                     and b.kode_jabatan in ('001','002')
-                    ) A";
+                    ) A
+                    where tanggal between '$tanggal1' and '$tanggal2'
+                    ORDER BY tanggal DESC";
     $result = mysqli_query($conn, $query);
 
     while($isi = mysqli_fetch_array($result))

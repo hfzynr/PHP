@@ -5,6 +5,17 @@
     } else {
         header("Location: ./login.php");
     }
+
+    if(isset($_COOKIE['Presensi']) && $_COOKIE['Presensi'] == 'Presensi Sukses') {
+        echo '<script language="javascript">';
+        echo 'alert("Presensi Sukses")';
+        echo '</script>';
+        unset($_SESSION['Presensi']);
+    } 
+    else if  (isset($_COOKIE['Presensi']) && $_COOKIE['Presensi'] == 'Presensi Gagal') {
+        echo "Cookie " . $_COOKIE['Presensi'];
+        unset($_COOKIE['Presensi']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

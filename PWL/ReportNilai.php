@@ -21,15 +21,31 @@
                 $('#tableUser').html(data)
             });
         }
+
+        const searchInquiryDateJQ = (value1, value2) => {
+            $.get("./SearchReport/SearchReportNilai.php", {tanggal1: value, tanggal2: value2})
+             .done(function(data){
+                $('#tableUser').html(data)
+            });
+        }
     </script>
 </head>
 <?php include './src/Contents/Header.php' ?>
 <body onload="searchInquiryJQ('')">
-    <div class="mr-sm-2 ml-sm-2 row justify-content-between form-row">
-        <div class="col-3 mt-3 mb-2">
+    <div class="mr-sm-2 ml-sm-2 row justify form-row">
+        <div class="col-3 mt-3 mb-2 mr-3">
             <input id="inpSearch" class="form-control mr-sm-2" type="text" placeholder="Search" onkeyup="searchInquiryJQ(this.value)">
         </div>
+
+            <div class="col-1 mt-3 mb-2">
+                <input id="inpDateFrom" class="form-control mr-sm-2" type="text" placeholder="Dari Tanggal">
+            </div>
+
+            <div class="col-1 mt-3 mb-2">
+                <input id="inpDateTo" class="form-control mr-sm-2" type="text" placeholder="Hingga Tanggal" onkeyup="searchInquiryDateJQ(inpDateFrom.value, this.value)">
+            </div>
     </div>
+    
 
     <div class="col-md-12">
         <table class="table">
